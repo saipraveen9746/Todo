@@ -1,0 +1,23 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href= "{% static "css\createtask.css" %}">
+    <title>Title</title>
+</head>
+<body>
+    <div class="crtask">
+     <form method="post" action="">
+         <h1  style= "padding-left:150px">Add your tasks here<h1>
+         {% csrf_token %}
+        <div class="mainform">{{form.as_p}}</div>
+        <button type="submit">Submit</button>
+     </form>
+    </div> 
+
+
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Task</title>
+</head>
+<body>
+    <h2>Are you sure you want to delete this task?</h2>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Yes, delete" class="btn btn-danger">
+        <a href="{% url 'task' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</body>
+</html>

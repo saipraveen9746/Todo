@@ -1,0 +1,85 @@
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<style>
+        /* Custom CSS for positioning the links */
+        .content {
+            align-items: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid white;
+            padding: 10px;
+            text-align: left;
+        }
+        .icon-link img {
+            width: 20px; /* Adjust the width as needed */
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+
+
+</style>
+</head>
+<body>
+<br>
+<div class="box" style="padding-left:300px;padding-right:300px;padding-top:20px;">
+    <div class="cont"
+         style="border: 3px solid rgb(239, 169, 29);padding-left:20px;padding-right:20px;padding-top:20px;">
+        <div class="headline" style="font-size: 20px;font-weight: 600;color: rgb(58, 58, 56);text-align:center;">
+
+            <div class="log" style="display:flex;justify-content:end">
+                {% if request.user.is_authenticated %}
+                <td><a href="{% url 'logout' %}" class="icon-link" style="color: blue;"><img
+                         alt="Update">logout</a>
+                </td>
+
+                {% else %}
+                <a href="{% url 'login' %}"> Login</a>
+                {% endif %}
+            </div>
+
+
+            <h1>Hello , {{user.username | title }}</h1>
+
+            <div class="content" style="">
+                <table>
+                    <tbody>
+                    {% for i in task %}
+                    <tr>
+                        <td>{{ i.task }}</td>
+
+                        <td><a href="{% url 'update' i.id %}"  style="color: blue;">Update</a></td>
+                        <td><a href="{% url 'details' i.id %}"  style="color: green;">View</a></td>
+                        <td><a href="{% url 'delete' i.id %}" style="color: red;">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <br>
+
+            <div class="add">
+                <div class="add"><a class="btn btn-warning" href="{% url 'createtask'  %}" role="button"><b>ADD🖊</b></a>
+                </div>
+
+            </div>
+            <br>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

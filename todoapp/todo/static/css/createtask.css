@@ -1,0 +1,47 @@
+
+.crtask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+
+form {
+    border: 2px solid #ccc;
+    background-color: #ebece7;
+    border-radius: 30px;
+    padding: 20px; 
+    width: 600px; 
+    height: 500px;
+}
+
+
+button[type="submit"] {
+    background-color: #ffffff; 
+    color: #000000; 
+    margin-left: 250px;
+    padding: 10px 20px; 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 30px;
+}
+button[type="submit"]:hover{
+    transform: scale(1.1);
+}
+.mainform{
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 30px;
+    font-size: 20px;
+    
+}
+
+input[type="text"], input[type="password"] {
+    border-radius: 10px;
+    border: none;
+    height: 40px;
+    width: 400px;
+
+}
